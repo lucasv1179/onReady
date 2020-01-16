@@ -3,7 +3,7 @@ package com.onready.concesionaria;
 import com.onready.helpers.Helper;
 
 public class Moto extends Vehiculo {
-    public String cilindrada;
+    String cilindrada;
 
     Moto(String marca, String modelo, String cilindrada, double precio) {
         super(marca, modelo, precio);
