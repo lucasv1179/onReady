@@ -16,7 +16,7 @@ public class Concesionaria {
         flota = crearFlota();
         masCaro = encontrarMayorPrecio(flota);
         masBarato = encontrarMenorPrecio(flota);
-        modeloY = encontrarModeloY(flota);
+        modeloY = (List<Vehiculo>) encontrarModeloY(flota); //TODO: find a way to avoid unchecked cast
 
         imprimirReporte(flota, masCaro, masBarato, modeloY);
     }
@@ -49,8 +49,8 @@ public class Concesionaria {
         return min.orElse(null);
     }
 
-    private static List<Vehiculo> encontrarModeloY(List<Vehiculo> flota) {
-        List<Vehiculo> lista;
+    private static List<? extends Identificable> encontrarModeloY(List<? extends Identificable> flota) {
+        List<Identificable> lista;
         lista = flota
                 .stream()
                 .filter(vehiculo -> vehiculo.contieneSequencia("Y"))
