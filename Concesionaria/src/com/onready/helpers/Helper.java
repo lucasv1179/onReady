@@ -10,9 +10,9 @@ public class Helper {
         return formatter.format(price);
     }
 
-    public static void imprimirDivisor(char c, int numero) {
-        for (; numero > 0; --numero) {
-            System.out.print(c);
+    public static void imprimirDivisor(char simbolo, int cantidad) {
+        for (; cantidad > 0; --cantidad) {
+            System.out.print(simbolo);
         }
         System.out.println();
     }
